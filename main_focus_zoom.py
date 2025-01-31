@@ -27,7 +27,7 @@ def detect_and_focus_people(video_source, output_dimensions=(640, 480), debug=Fa
         return
 
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter('output.avi', fourcc, 30.0, output_dimensions)
+    out = cv2.VideoWriter('video/output.avi', fourcc, 30.0, output_dimensions)
 
     smoothed_bbox = None
     smoothing_factor = 0.9
@@ -37,7 +37,7 @@ def detect_and_focus_people(video_source, output_dimensions=(640, 480), debug=Fa
         if not ret:
             break
         
-        classIds, confs, bbox = net.detect(frame, confThreshold=0.6)
+        classIds, confs, bbox = net.detect(frame, confThreshold=0.5)
 
         if len(classIds) != 0:
             person_bboxes = [box for classId, conf, box in zip(classIds.flatten(), confs.flatten(), bbox) if classId == 1]
@@ -90,5 +90,11 @@ def draw_boxes(frame, boxes):
         cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
 if __name__ == "__main__":
-    # VIDEO_SOURCE = "input.mp4"
-    detect_and_focus_people(VIDEO_SOURCE, (640, 480), debug=True)
+    VIDEO_SOURCE = "video/sg.mp4"
+    VIDEO_SOURCE = "video/jared.mp4"
+    VIDEO_SOURCE = "video/walgreen.mp4"
+    detect_and_focus_people(VIDEO_SOURCE, (320, 180), debug=True)
+    # VIDEO_SOURCE = "video/input.mp4"
+    # detect_and_focus_people(VIDEO_SOURCE, (960, 540), debug=True)
+    # VIDEO_SOURCE = 0
+ 
