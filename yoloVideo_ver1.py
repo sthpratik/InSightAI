@@ -97,7 +97,17 @@ def detect_and_focus_people(input_source, output_dimensions=(640, 480), debug=Fa
     print("Processing complete. Output saved as:", output_video)
 
 if __name__ == "__main__":
+    VIDEO_SOURCE = "video/input.mp4"
+    detect_and_focus_people(VIDEO_SOURCE, (540, 360), debug=True)
+
+    # VIDEO_SOURCE = "video/sg.mp4"
+    # detect_and_focus_people(VIDEO_SOURCE, (320, 180), debug=True)
+
+    # VIDEO_SOURCE = "video/walgreen.mp4"
+    # detect_and_focus_people(VIDEO_SOURCE, (320, 180), debug=True)
+
     # VIDEO_SOURCE = "video/input.mp4"
-    # detect_and_focus_people(VIDEO_SOURCE, output_width=960, output_height=540, debug=True)
-    VIDEO_SOURCE = "video/sg.mp4"
-    detect_and_focus_people(VIDEO_SOURCE, (320, 180), debug=True)
+    # detect_and_focus_people(VIDEO_SOURCE, (320, 180), debug=True)
+
+    # VIDEO_SOURCE = 0
+    # detect_and_focus_people(VIDEO_SOURCE, (640, 360), debug=True)
