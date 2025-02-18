@@ -118,4 +118,4 @@ def videoTracker(video_path=None):
 
 
 if __name__ == "__main__":
-    videoTracker("/Users/pratikshrestha/Documents/Apps/Research/AI/sample-videos/head-pose-face-detection-female.mp4")  # Use 0 for webca
+    videoTracker("./video/input.mp4")  # Use 0 for webcam
