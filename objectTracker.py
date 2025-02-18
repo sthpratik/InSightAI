@@ -9,11 +9,6 @@ def videoTracker(video_path=None):
     print(cv2.__version__)
     # Open video file or webcam
     cap = cv2.VideoCapture(0 if video_path is None else video_path)
-    cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.75)  # Adjust this value as needed
-    cap.set(cv2.CAP_PROP_BRIGHTNESS, 0.6)  # Value between 0 and 1
-    cap.set(cv2.CAP_PROP_CONTRAST, 0.5)    # Adjust contrast
-    cap.set(cv2.CAP_PROP_SATURATION, 0.5)  # Adjust saturation
-
     
     if not cap.isOpened():
         print("Error: Cannot open video source")
@@ -123,4 +118,4 @@ def videoTracker(video_path=None):
 
 
 if __name__ == "__main__":
-    videoTracker("/Users/pratikshrestha/Documents/Apps/Research/AI/sample-videos/head-pose-face-detection-female.mp4")  # Use 0 for webcam
+    videoTracker("/Users/pratikshrestha/Documents/Apps/Research/AI/sample-videos/head-pose-face-detection-female.mp4")  # Use 0 for webca
